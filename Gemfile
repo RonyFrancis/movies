@@ -39,6 +39,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'yard'
   gem 'rspec'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
 
@@ -53,3 +54,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'versionist'
