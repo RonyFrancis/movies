@@ -9,7 +9,7 @@ RSpec.describe V1::MoviesController, type: :controller do
         expect(response).to have_http_status(200)
         expect(response.body).to be_a(String)
         json_response = JSON.parse(response.body)
-        json_response['movies'].each do |data|
+        json_response.each do |data|
           expect(data).to include('name')
         end
       end
@@ -25,7 +25,8 @@ RSpec.describe V1::MoviesController, type: :controller do
       expect(response).to have_http_status(200)
       expect(response.body).to be_a(String)
       json_response = JSON.parse(response.body)
-      expect(json_response.keys).to include('movie', 'review')
+      puts json_response
+      expect(json_response[0]).to include('movie', 'review', 'avg_rating')
     end
   end
   describe '#average_rating' do
@@ -37,7 +38,8 @@ RSpec.describe V1::MoviesController, type: :controller do
       expect(response).to have_http_status(200)
       expect(response.body).to be_a(String)
       json_response = JSON.parse(response.body)
-      expect(json_response['rating']).to include('avg_rating')
+      puts json_response
+      expect(json_response[0]['rating']).to include('avg_rating')
     end
   end
 end

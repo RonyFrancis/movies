@@ -6,9 +6,10 @@ module V1
     #
     # @return json created_rating
     def create
-      puts params
       @rating = Rating.new(rating_params)
       @rating.save
+      @movie = Movie.find(params[:rating][:movie_id])
+      @movie.update_attributes(avg_rating: @movie.avg_rating)
       render json: @rating
       # render json: { rating: { movie_id: 1,
       #                          rate: 3,

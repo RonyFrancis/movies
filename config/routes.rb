@@ -13,5 +13,10 @@ Rails.application.routes.draw do
     # dashboard routes
     get 'dashboard', to: 'dashboard#index'
     get 'movie/:id', to: 'dashboard#movie'
+
+    # login
+    get 'login', to: 'users#login'
+    post '/login_verify', to: 'users#login_verify'
+    get '/destroy', to: 'users#destroy'
   end
 end

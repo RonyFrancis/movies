@@ -1,0 +1,12 @@
+Username: <input type="text" id="username" name="username"></input>
+Password: <input type="password" id="password" name="password"></input>
+<button onClick=login()>Submit</button>
+<script>
+function  login() {
+  let url = '/v1/login_verify';
+  let data = { username: $('#username').val() , password: $('#password').val() }
+  $.post(url, data, (response) => {
+    console.log('it worked', response);
+  });
+}
+</script>

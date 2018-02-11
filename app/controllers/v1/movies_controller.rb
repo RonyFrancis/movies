@@ -6,7 +6,10 @@ module V1
     #
     # @return json list_of_movies
     def index
-      @movies = Movie.all
+      @movies = Movie.all.order('avg_rating DESC')
+      # @movies.each do |movie|
+      #   movie.as_json.merge!(rating: movie.avg_rating)
+      # end
       render json: @movies
       # render json: { movies: [{ name: 'IronMan' },
       #                         { name: 'hulk' },
