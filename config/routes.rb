@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     end
     post 'vote', to: 'vote#voting'
     post 'create', to: 'rating#create'
+
+    # dashboard routes
+    get 'dashboard', to: 'dashboard#index'
+    get 'movie/:id', to: 'dashboard#movie'
   end
 end

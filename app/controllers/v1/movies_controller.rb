@@ -7,7 +7,7 @@ module V1
     # @return json list_of_movies
     def index
       @movies = Movie.all
-      render json: { movies: @movies }
+      render json: @movies
       # render json: { movies: [{ name: 'IronMan' },
       #                         { name: 'hulk' },
       #                         { name: 'ironman2' },
@@ -20,7 +20,7 @@ module V1
     #
     # @return json details_of_the_and_reviews_by_the_users
     def show
-      render json: { movie: @movie, review: @movie.ratings }
+      render json: [movie: @movie, review: @movie.ratings, avg_rating: @movie.avg_rating ]
       # render json: { movie: { name: 'IronMan' },
       #                review: [{ rating: 4 }, coment: 'superhero movie'] }
     end

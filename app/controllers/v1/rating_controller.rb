@@ -9,7 +9,7 @@ module V1
       puts params
       @rating = Rating.new(rating_params)
       @rating.save
-      render json: { rating: @rating }
+      render json: @rating
       # render json: { rating: { movie_id: 1,
       #                          rate: 3,
       #                          comment: 'good' } }
