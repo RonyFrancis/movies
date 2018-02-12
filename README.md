@@ -22,7 +22,7 @@ Sample Apis and Responses
 
 1. Movies Api
    * command: curl http://localhost:3000/v1/movies|json_pp
-   * response: [
+   * response: ```[
    {
       "name" : "ironman",
       "avg_rating" : 0,
@@ -103,7 +103,7 @@ Sample Apis and Responses
       "name" : "avenger",
       "created_at" : "2018-02-11T18:15:01.988Z"
    }
-]
+]```
 
 Note: by default movies are listed based on average rating of the movies
 
