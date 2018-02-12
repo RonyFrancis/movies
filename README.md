@@ -105,9 +105,8 @@ Sample Apis and Responses
       "name" : "avenger",
       "created_at" : "2018-02-11T18:15:01.988Z"
    }
-]
-```
-
+  ]```
+  
 Note: by default movies are listed based on average rating of the movies
 
 2. Movie info api
@@ -158,7 +157,6 @@ Note: by default movies are listed based on average rating of the movies
    "movie_id" : 1,
    "comment" : "great movie"
 }
-```
 
 5. Voting Api
     * command: curl --data "vote[rating_id]=1&vote[vote]=down" http://localhost:3000/v1/vote|json_pp
@@ -170,7 +168,7 @@ Note: by default movies are listed based on average rating of the movies
       "vote_type" : "down"
    }
 }
-```
+
 
 Dashboard
 
