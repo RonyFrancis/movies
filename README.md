@@ -22,7 +22,9 @@ Sample Apis and Responses
 
 1. Movies Api
    * command: curl http://localhost:3000/v1/movies|json_pp
-   * response: ```[
+   * response:
+    ```
+    [
    {
       "name" : "ironman",
       "avg_rating" : 0,
@@ -103,7 +105,8 @@ Sample Apis and Responses
       "name" : "avenger",
       "created_at" : "2018-02-11T18:15:01.988Z"
    }
-]```
+]
+```
 
 Note: by default movies are listed based on average rating of the movies
 
@@ -111,7 +114,9 @@ Note: by default movies are listed based on average rating of the movies
      List details for that particular movie
   * command: curl http://localhost:3000/v1/movies/1|json_pp
   * params: id
-  * response: [
+  * response:
+   ```
+   [
    {
       "avg_rating" : 0,
       "movie" : {
@@ -125,21 +130,27 @@ Note: by default movies are listed based on average rating of the movies
       "review" : []
    }
 ]
+```
 
 3. Average Rating of a Movie
   * command: curl http://localhost:3000/v1/movies/1/average_rating|json_pp
   * params: id
-  * response: {
+  * response:
+  ```
+   {
    "rating" : {
       "avg_rating" : 0
    }
 }
+```
 
 4. Rating Api
    * command: curl --data "rating[movie_id]=1&rating[rate]=5&rating[comment]=great movie" http://localhost:3000/v1/movies/1/rating |json_pp
    * params: rating: { movie_id: id_of_the_movie, rate: rating_from_1_to_5, comment: coments_if_any },
            id: movie id
-   * response: {
+   * response:
+    ```
+    {
    "updated_at" : "2018-02-12T00:56:56.353Z",
    "created_at" : "2018-02-12T00:56:56.353Z",
    "id" : 3,
@@ -147,15 +158,19 @@ Note: by default movies are listed based on average rating of the movies
    "movie_id" : 1,
    "comment" : "great movie"
 }
+```
 
 5. Voting Api
     * command: curl --data "vote[rating_id]=1&vote[vote]=down" http://localhost:3000/v1/vote|json_pp
     * params: vote: { rating_id: id_of_the_rating_which_u_r_voting, vote: status_is_up_or_down }
-    * response: {
+    * response:
+    ```
+     {
    "vote" : {
       "vote_type" : "down"
    }
 }
+```
 
 Dashboard
 
