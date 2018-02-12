@@ -21,8 +21,8 @@ App Installation & Running
 Sample Apis and Responses
 
 1. Movies Api
-   command: curl http://localhost:3000/v1/movies|json_pp
-   response: [
+   * command: curl http://localhost:3000/v1/movies|json_pp
+   * response: [
    {
       "name" : "ironman",
       "avg_rating" : 0,
@@ -109,9 +109,9 @@ Note: by default movies are listed based on average rating of the movies
 
 2. Movie info api
      List details for that particular movie
-  command: curl http://localhost:3000/v1/movies/1|json_pp
-  params: id
-  response: [
+  * command: curl http://localhost:3000/v1/movies/1|json_pp
+  * params: id
+  * response: [
    {
       "avg_rating" : 0,
       "movie" : {
@@ -127,19 +127,19 @@ Note: by default movies are listed based on average rating of the movies
 ]
 
 3. Average Rating of a Movie
-  command: curl http://localhost:3000/v1/movies/1/average_rating|json_pp
-  params: id
-  response: {
+  * command: curl http://localhost:3000/v1/movies/1/average_rating|json_pp
+  * params: id
+  * response: {
    "rating" : {
       "avg_rating" : 0
    }
 }
 
 4. Rating Api
-   command: curl --data "rating[movie_id]=1&rating[rate]=5&rating[comment]=great movie" http://localhost:3000/v1/movies/1/rating |json_pp
-   params: rating: { movie_id: id_of_the_movie, rate: rating_from_1_to_5, comment: coments_if_any },
+   * command: curl --data "rating[movie_id]=1&rating[rate]=5&rating[comment]=great movie" http://localhost:3000/v1/movies/1/rating |json_pp
+   * params: rating: { movie_id: id_of_the_movie, rate: rating_from_1_to_5, comment: coments_if_any },
            id: movie id
-   response: {
+   * response: {
    "updated_at" : "2018-02-12T00:56:56.353Z",
    "created_at" : "2018-02-12T00:56:56.353Z",
    "id" : 3,
@@ -149,9 +149,9 @@ Note: by default movies are listed based on average rating of the movies
 }
 
 5. Voting Api
-    command: curl --data "vote[rating_id]=1&vote[vote]=down" http://localhost:3000/v1/vote|json_pp
-    params: vote: { rating_id: id_of_the_rating_which_u_r_voting, vote: status_is_up_or_down }
-    response: {
+    * command: curl --data "vote[rating_id]=1&vote[vote]=down" http://localhost:3000/v1/vote|json_pp
+    * params: vote: { rating_id: id_of_the_rating_which_u_r_voting, vote: status_is_up_or_down }
+    * response: {
    "vote" : {
       "vote_type" : "down"
    }
@@ -160,13 +160,13 @@ Note: by default movies are listed based on average rating of the movies
 Dashboard
 
 6. Login
-   url: http://localhost:3000/v1/login
-  login_params:
+  * url: http://localhost:3000/v1/login
+  * login_params:
      username: user1
      password: 123456
 
 7. Dashboard
-   url: http://localhost:3000/v1/dashboard
+   * url: http://localhost:3000/v1/dashboard
 
 8. Movie page
-  url: http://localhost:3000/v1/movie/1
+  * url: http://localhost:3000/v1/movie/1
